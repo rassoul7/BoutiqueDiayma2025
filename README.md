@@ -124,7 +124,9 @@ cd P2FixAnAppDotNetCode
 dotnet publish Diayma.csproj -c Release -r win-x64 --self-contained -o publication-win-x64
 ```
 
-Lien de téléchargement : **à compléter**
+Lien de téléchargement : https://drive.google.com/file/d/12wJMPIO9359W_oPrjtmDm0UdQs-5nA36/view?usp=drive_link
+
+Décompresser l'archive, lancer `Diayma.exe`, puis ouvrir http://localhost:5000.
 
 ## 11. Option : langue wolof
 
