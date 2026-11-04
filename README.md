@@ -125,3 +125,15 @@ dotnet publish Diayma.csproj -c Release -r win-x64 --self-contained -o publicati
 ```
 
 Lien de téléchargement : **à compléter**
+
+## 11. Option : langue wolof
+
+La langue wolof a été ajoutée à l'interface :
+
+- Le sélecteur propose « Wolof » et un fichier `.wo.resx` existe pour chaque écran.
+- Les textes passent en wolof, tandis que les formats de nombres, de dates et de monnaie restent ceux du français, comme demandé (`RequestCulture("fr", "wo")`).
+- Le SDK en ligne de commande ne reconnaît pas la culture `wo`. Deux cibles ajoutées à `Diayma.csproj` génèrent quand même le dossier `wo`.
+
+**Contrôle réalisé :** en wolof, l'accueil, le panier et la commande s'affichent dans cette langue. En français, les textes restent corrects.
+
+**Limite :** ces traductions n'ont pas été relues par un locuteur natif.

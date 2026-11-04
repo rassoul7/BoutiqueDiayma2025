@@ -44,4 +44,22 @@
     <PackageReference Include="Microsoft.Extensions.Localization" Version="2.1.1" />
   </ItemGroup>
 
+  <!-- Le SDK en ligne de commande ne reconnaît pas la culture wolof : on la déclare pour générer le dossier wo -->
+  <Target Name="CultureWolof" AfterTargets="SplitResourcesByCulture">
+    <ItemGroup>
+      <EmbeddedResource Condition="$([System.String]::Copy('%(Filename)').EndsWith('.wo'))">
+        <WithCulture>true</WithCulture>
+        <Culture>wo</Culture>
+      </EmbeddedResource>
+    </ItemGroup>
+  </Target>
+
+  <Target Name="NomsWolof" AfterTargets="CreateManifestResourceNames">
+    <ItemGroup>
+      <EmbeddedResource Condition="'%(EmbeddedResource.Culture)' == 'wo'">
+        <ManifestResourceName>$([System.String]::Copy('%(ManifestResourceName)').Replace('.wo.wo', '.wo'))</ManifestResourceName>
+      </EmbeddedResource>
+    </ItemGroup>
+  </Target>
+
 </Project>
